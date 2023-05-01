@@ -2,7 +2,7 @@ require_relative 'campeonato'
 
 class PopulaCampeonato
   def insere_campeonato(nome, local)
-    camp = Campeonato.new(nome:, local:)
+    camp = Campeonato.new(nome, local)
     camp.save
   end
 
@@ -27,7 +27,7 @@ class PopulaCampeonato
   end
 
   def atualiza_campeonato_local(local, novo_local)
-    campeonato = Campeonato.find_by(local:)
+    campeonato = Campeonato.find_by(local)
     if campeonato.nil?
       puts "Campeonato no #{local} não encontrado"
     else

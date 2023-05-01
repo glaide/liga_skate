@@ -17,7 +17,7 @@ class PopulaLocal
   end
 
   def atualiza_local(nome, novo_nome)
-    local = Local.find_by(nome:)
+    local = Local.find_by(nome)
     if local.nil?
       puts "Local #{nome} não encontrado"
     else
