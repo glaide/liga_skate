@@ -6,12 +6,13 @@ require_relative  'participacao'
 class PopulaParticipacao
   # @param [string] posicao
   def inserir_participacao(posicao)
-    participacao = Participacao.new(posicao:)
+    participacao = Participacao.new
+    participacao.posicao << posicao
     participacao.save
   end
 
   def excluir_participacao(posicao)
-    participacao = Participacao.find_by(posicao: )
+    participacao = Participacao.find_by(posicao)
     if participacao.nil?
       puts "Participacao #{posicao} não encontrada"
     else
@@ -21,7 +22,7 @@ class PopulaParticipacao
   end
 
   def update_participacao(posicao, nova_posicao)
-    participacao = Participacao.find_by(posicao: )
+    participacao = Participacao.find_by(posicao)
     if participacao.nil?
       puts "Participacao #{posicao} não encontrada"
     else

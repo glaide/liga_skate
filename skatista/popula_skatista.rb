@@ -7,12 +7,12 @@ require_relative  'skatista'
 # classe que lista com skatista
 class PopulaSkatista
   def insere(nome)
-    Skatista.create(nome:).save
+    Skatista.create(nome).save
 
   end
 
   def exclui(nome)
-    skate = Skatista.find_by(nome: )
+    skate = Skatista.find_by(nome )
     if skate.nil?
       puts "Skatista #{nome} não encontrado"
     else
@@ -22,7 +22,7 @@ class PopulaSkatista
   end
 
   def update(nome, novo_nome)
-    skate = Skatista.find_by(nome: )
+    skate = Skatista.find_by(nome )
     if skate.nil?
       puts "Skatista #{nome} não encontrado"
     else
