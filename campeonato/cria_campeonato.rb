@@ -6,4 +6,5 @@ ActiveRecord::Base.establish_connection adapter: 'sqlite3',
 ActiveRecord::Base.connection.create_table :campeonatos do |p|
   p.string :nome
   p.string :local
+  p.references :local, foreign_key: true
 end

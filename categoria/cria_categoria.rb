@@ -5,4 +5,5 @@ ActiveRecord::Base.establish_connection adapter: 'sqlite3',
 
 ActiveRecord::Base.connection.create_table :categorias do |p|
   p.string :nome
+  p.references :local, foreign_key: true
 end

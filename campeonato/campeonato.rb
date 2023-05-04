@@ -8,7 +8,7 @@ ActiveRecord::Base.establish_connection(
 
 class Campeonato < ActiveRecord::Base
   self.table_name = "campeonatos"
-
   validates :nome, presence: true
+  belongs_to :local
   validates :local, presence: true
 end

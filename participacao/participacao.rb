@@ -10,5 +10,7 @@ ActiveRecord::Base.establish_connection(
 class Participacao < ActiveRecord::Base
   self.table_name = 'participacoes'
   validates :posicao, presence: true
+  belongs_to :campeonato
+  belongs_to :skatista
 
 end

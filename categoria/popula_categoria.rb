@@ -3,8 +3,11 @@ require_relative 'categoria'
 # classe que é responsável por criar, atualizar e excluir categoria
 
 class PolulaCategoria
-  def insere_categoria(nome)
-    Categoria.create(nome: nome).save
+  def insere_categoria(nome, local)
+    c = Categoria.new
+    c.nome = nome
+    l = Local.new
+
   end
 
   def exclui_categoria(nome)

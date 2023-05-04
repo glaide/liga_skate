@@ -5,5 +5,7 @@ ActiveRecord::Base.establish_connection adapter: 'sqlite3',
 
 ActiveRecord::Base.connection.create_table :participacoes do |p|
   p.integer :posicao
+  p.references :campeonato
+  p.references :skatista
 
 end
