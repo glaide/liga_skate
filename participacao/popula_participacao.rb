@@ -4,15 +4,29 @@ require_relative  'participacao'
 
 # classe que é responsável por criar, atualizar e excluir participacao
 class PopulaParticipacao
-  # @param [string] posicao
-  def inserir_participacao(posicao)
-    participacao = Participacao.new
-    participacao.posicao << posicao
-    participacao.save
+
+  def inserir_participacao(posicao, sk_nome, camp_nome)
+    p = Participacao.new
+    p.posicao=posicao
+    s = Skatista.find_by_nome(sk_nome)
+    if s.nil?
+      s = Skatista.new
+      s.nome = sk_nome
+    end
+    s.save
+    p.skatista = s
+    c = Campeonato.find_by_nome(camp_nome)
+    if c.nil?
+      c = Campeonato.new
+      c.nome = camp_nome
+      c.save
+    end
+    p.campeonato = c
+    p.save
   end
 
   def excluir_participacao(posicao)
-    participacao = Participacao.find_by(posicao)
+    participacao = Participacao.find_by_posicao(posicao)
     if participacao.nil?
       puts "Participacao #{posicao} não encontrada"
     else
@@ -22,7 +36,7 @@ class PopulaParticipacao
   end
 
   def update_participacao(posicao, nova_posicao)
-    participacao = Participacao.find_by(posicao)
+    participacao = Participacao.find_by_posicao(posicao)
     if participacao.nil?
       puts "Participacao #{posicao} não encontrada"
     else

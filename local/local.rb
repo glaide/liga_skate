@@ -11,6 +11,5 @@ class Local < ActiveRecord::Base
   self.table_name = 'locais'
   validates :endereco, presence: true
   has_one :campeonato, dependent: :destroy
-  has_one :categoria, dependent: :destroy
 
 end

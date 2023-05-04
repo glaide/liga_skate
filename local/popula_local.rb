@@ -16,17 +16,6 @@ class PopulaLocal
     else
       c.local = l
       c.save
-      end
-
-    ctg = Categoria.find_by_nome(catg)
-    if ctg.nil?
-      ctg = Categoria.new
-      ctg.nome = catg
-      ctg.local = l
-      ctg.save
-    else
-      ctg = l
-      ctg.save
     end
 
     l.save

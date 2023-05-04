@@ -22,7 +22,7 @@ class PopulaCampeonato
   end
 
   def atualiza_campeonato_nome(nome, novo_nome)
-    campeonato = Campeonato.find_by(nome: nome)
+    campeonato = Campeonato.find_by_nome(nome)
     if campeonato.nil?
       puts "Campeonato #{nome} não encontrado"
     else
@@ -32,8 +32,6 @@ class PopulaCampeonato
   end
 
   def atualiza_campeonato_local(nome, novo_local)
-
-
     campeonato = Campeonato.find_by_nome(nome)
 
     if campeonato.nil?

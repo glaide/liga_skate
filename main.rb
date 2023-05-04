@@ -4,7 +4,3 @@ require_relative 'campeonato/popula_campeonato'
 require_relative 'categoria/popula_categoria'
 require_relative 'local/popula_local'
 
-
-
-camp = PopulaCampeonato.new
-camp.exclui_campeonato( "campeonato da glaide")

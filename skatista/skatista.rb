@@ -8,4 +8,5 @@ ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: 'liga_skat
 class Skatista < ActiveRecord::Base
   self.table_name = 'skatistas'
   validates :nome, presence: true
+  belongs_to :categoria
 end
