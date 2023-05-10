@@ -10,7 +10,8 @@ ActiveRecord::Base.establish_connection(
 class Categoria < ActiveRecord::Base
   self.table_name = 'categorias'
   validates :nome, presence: true
-  # has_many :skatista, presence: true
+  has_and_belongs_to_many :skatista
+
 
 
 end

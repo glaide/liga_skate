@@ -11,4 +11,5 @@ class Campeonato < ActiveRecord::Base
   validates :nome, presence: true
   belongs_to :local
   validates :local, presence: true
+  has_many :participacao
 end

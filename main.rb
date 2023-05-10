@@ -1,6 +1,8 @@
-require_relative 'skatista/popula_skatista'
-require_relative 'participacao/popula_participacao'
-require_relative 'campeonato/popula_campeonato'
-require_relative 'categoria/popula_categoria'
-require_relative 'local/popula_local'
+require_relative 'populaCategoriaSkatista'
 
+p = PopulaCategoriaSkatista.new
+p.insere('iniciante', 'skatista')
+p.insere('iniciante', 'skatista')
+p.insere('iniciante', 'skatista')
+p.insere('iniciante', 'skatista')
+p.lista()
